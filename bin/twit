@@ -13,10 +13,12 @@ var options = require('commander')
   .version(require('../package.json').version)
   .parse(process.argv);
 
-Promise.map(options.args, function(name) {
-  return available(name).spread(function(response, body) {
+Promise.map(options.args, name => {
+  return available(name).then((response, body) => {
     console.log(sprintf('%-40s %3d', name, response.statusCode));
   });
-}).then(function() {
+}).then(() => {
   process.exit(0);
-})
+}).catch(err => {
+  console.log(err);
+});
