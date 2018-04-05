@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+
+var Promise = require('bluebird').Promise;
+var request = Promise.promisify(require('request'));
+var sprintf = require('sprintf');
+
+function available(name) {
+  return request('http://twitter.com/' + name);
+}
+
+var options = require('commander')
+  .option('-v --verbose', 'Enable verbose mode', false)
+  .version(require('../package.json').version)
+  .parse(process.argv);
+
+Promise.map(options.args, function(name) {
+  return available(name).spread(function(response, body) {
+    console.log(sprintf('%-40s %3d', name, response.statusCode));
+  });
+}).then(function() {
+  process.exit(0);
+})

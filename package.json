@@ -1,0 +1,28 @@
+{
+  "name": "twit",
+  "version": "1.0.0",
+  "description": "Twitter Availablility Checker",
+  "main": "bin/twit",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tadman/twit.git"
+  },
+  "keywords": [
+    "twitter"
+  ],
+  "author": "Scott Tadman <scott@tadman.ca>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tadman/twit/issues"
+  },
+  "homepage": "https://github.com/tadman/twit#readme",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "commander": "^2.15.1",
+    "request": "^2.85.0",
+    "sprintf": "^0.1.5"
+  }
+}
