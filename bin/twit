@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 
-var Promise = require('bluebird').Promise;
-var request = Promise.promisify(require('request'));
-var sprintf = require('sprintf');
+const Promise = require('bluebird').Promise;
+const request = Promise.promisify(require('request'));
+const { sprintf } = require('sprintf-js');
 
 function available(name) {
   return request('http://twitter.com/' + name);
 }
 
-var options = require('commander')
+let options = require('commander')
   .option('-v --verbose', 'Enable verbose mode', false)
   .version(require('../package.json').version)
   .parse(process.argv);
