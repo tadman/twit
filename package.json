@@ -20,9 +20,9 @@
   },
   "homepage": "https://github.com/tadman/twit#readme",
   "dependencies": {
-    "bluebird": "^3.5.1",
-    "commander": "^2.15.1",
-    "request": "^2.85.0",
+    "bluebird": "^3.5.3",
+    "commander": "^2.19.0",
+    "request": "^2.88.0",
     "sprintf": "^0.1.5"
   }
 }
